@@ -216,102 +216,84 @@ Optimized (tree shaking)
 Obfuscation
 Harder
 Supported
-↑ Вверх
-
-Hot Restart and Hot Reload
+[↑ Вверх](#table-of-contents)
+## Hot Restart and Hot Reload
 Hot Reload: injects code, rebuilds tree, preserves state (initState not called).
 Hot Restart: full app restart, resets state (main, initState called).
-↑ Вверх
-
-HashCode
+[↑ Вверх](#table-of-contents)
+## HashCode
 Used in Set, Map. Must satisfy:
 
 a == b ⇒ a.hashCode == b.hashCode
 Prefer Object.hash(...) over manual impl.
-↑ Вверх
-
-Extension Methods
+[↑ Вверх](#table-of-contents)
+## Extension Methods
 Add functionality to existing types without inheritance:
 
-↑ Вверх
-
-Mixin
+[↑ Вверх](#table-of-contents)
+## Mixin
 Reusable behavior via with. No constructors. on restricts usage.
 
 
-↑ Вверх
-
-Sound Null Safety
+[↑ Вверх](#table-of-contents)
+## Sound Null Safety
 Non-nullable by default (int, not int?).
 Compile-time guarantee: no Null dereference.
 late: non-nullable, init on first access.
 required: named param must be provided.
-↑ Вверх
-
-Type System
+[↑ Вверх](#table-of-contents)
+## Type System
 Root: Object? (nullable) → Object (non-nullable).
 Never: bottom type — no instance possible (e.g. throw).
-↑ Вверх
-
-late
+[↑ Вверх](#table-of-contents)
+## late
 Defers initialization of non-nullable field:
 
 ⚠️ Risk: LateInitializationError if read before assignment.
 
-↑ Вверх
-
-Generics
+[↑ Вверх](#table-of-contents)
+## Generics
 Parameterized types (List<T>) — type-safe, reduce duplication.
 
-↑ Вверх
-
-Dart VM
+[↑ Вверх](#table-of-contents)
+## Dart VM
 Runtime with: execution env, GC, native libs, debugger, profiler, ARM simulator.
 
-↑ Вверх
-
-Zones
+[↑ Вверх](#table-of-contents)
+## Zones
 Error-handling scopes:
 
 Catch unhandled errors (prevent app crash)
 Zone-local storage
 Override print, scheduleMicrotask
 Hooks on entry/exit.
-↑ Вверх
-
-Types of Errors
+[↑ Вверх](#table-of-contents)
+## Types of Errors
 Category
 Examples
 Exception
 TimeoutException, HttpException, FormatException
 Error (non-recoverable)
 AssertionError, OutOfMemoryError, NoSuchMethodError
-↑ Вверх
-
-Naming Rules
+[↑ Вверх](#table-of-contents)
+## Naming Rules
 lowerCamelCase: vars, funcs
 UpperCamelCase: classes, enums
 snake_case: files
-↑ Вверх
-
-Never
+[↑ Вверх](#table-of-contents)
+## Never
 Uninhabited type — function returning Never never returns normally (e.g. throw).
 
-↑ Вверх
-
-Covariant
+[↑ Вверх](#table-of-contents)
+## Covariant
 Allows subtype to narrow parameter type:
 
-dart
-12
-↑ Вверх
-
-Annotations
+[↑ Вверх](#table-of-contents)
+## Annotations
 Metadata (@override, @required). Any class with const constructor can be annotation.
 
-↑ Вверх
-
-int8, uint8, int16, uint16...
+[↑ Вверх](#table-of-contents)
+## int8, uint8, int16, uint16...
 Used in dart:ffi. Sizes fixed across platforms.
 
 Specifier
@@ -336,12 +318,11 @@ uint16
 65,535
 ↑ Вверх
 
-Future
+## Future
 Represents async single value. States: pending → completed (value/error).
 
-↑ Вверх
-
-Future Constructors
+[↑ Вверх](#table-of-contents)
+## Future Constructors
 Constructor
 Use case
 Future(() => ...)
@@ -356,84 +337,71 @@ Future.sync(() => ...)
 Execute now, wrap in Future
 Future.value(x)
 Completed with value
-↑ Вверх
-
+[↑ Вверх](#table-of-contents)
 await under the hood
 dart
 123
-↑ Вверх
-
-Event Loop & Microtasks
+[↑ Вверх](#table-of-contents)
+## Event Loop & Microtasks
 Two queues (FIFO):
 
 Microtask queue: scheduleMicrotask, Future.then — higher priority.
 Event queue: I/O, timers, gestures — processed after microtasks.
 → Ensures async continuations run before next event.
 
-↑ Вверх
-
-Completer
+[↑ Вверх](#table-of-contents)
+## Completer
 Manually complete a Future (e.g. bridge callback APIs):
 
 dart
 123
-↑ Вверх
-
-Stream
+[↑ Вверх](#table-of-contents)
+## Stream
 Async sequence of events. Two types:
 
-Single-subscription: one listener (e.g. file read).
+## Single-subscription: one listener (e.g. file read).
 Broadcast: many listeners (e.g. UI events). Use StreamController.broadcast().
-↑ Вверх
-
-Generators (sync* / async*)
+[↑ Вверх](#table-of-contents)
+## Generators (sync* / async*)
 sync* → Iterable (sync sequence).
 async* → Stream (async sequence).
 Use yield, yield*.
-↑ Вверх
-
-Multithreading in Dart
+[↑ Вверх](#table-of-contents)
+## Multithreading in Dart
 Dart is single-threaded, but supports concurrency via:
 
 Isolates (separate heaps, no shared memory)
 Event loop + async/await (non-blocking I/O)
-↑ Вверх
-
-Isolate
+[↑ Вверх](#table-of-contents)
+## Isolate
 Independent worker with own heap, event loop. Communicate via SendPort/ReceivePort.
 
 Isolate.spawn(entryPoint, message)
 Data must be primitive/serializable (no refs).
 Isolate.exit(sendPort, value) → send + terminate; sendPort.send() → send only.
-↑ Вверх
-
-compute
+[↑ Вверх](#table-of-contents)
+## compute
 Convenience for one-off isolate work:
 
 dart
 1
 ⚠️ Not for frequent calls (isolate spawn overhead).
 
-↑ Вверх
-
-Multithreading Issues
+[↑ Вверх](#table-of-contents)
+##Multithreading Issues
 Deadlock, Race conditions, Lock Contention, Livelock.
-↑ Вверх
-
-Flutter
-↑ Вверх
-
-StatelessWidget and StatefulWidget
+[↑ Вверх](#table-of-contents)
+## Flutter
+[↑ Вверх](#table-of-contents)
+##StatelessWidget and StatefulWidget
 StatelessWidget: immutable, rebuilds entirely on parent change.
 StatefulWidget: mutable state in State; rebuilds via setState.
-↑ Вверх
-
-Stateful Widget Lifecycle
+[↑ Вверх](#table-of-contents)
+## Stateful Widget Lifecycle
 dart
 123
-↑ Вверх
-
-mounted and addPostFrameCallback
+[↑ Вверх](#table-of-contents)
+## mounted and addPostFrameCallback
 mounted: bool, true iff State is in tree. Always check before setState in async callbacks.
 dart
 123
@@ -441,9 +409,8 @@ fetchData().then((v) {
   if (mounted) setState(() => _data = v);
 });
 WidgetsBinding.instance.addPostFrameCallback: runs after current frame renders (e.g. show SnackBar right after build).
-↑ Вверх
-
-WidgetsBindingObserver
+[↑ Вверх](#table-of-contents)
+## WidgetsBindingObserver
 Listen to app-level events:
 
 dart
@@ -453,9 +420,8 @@ Use for:
 Pause/resume background tasks
 Save state on paused
 Adjust for textScaleFactor changes.
-↑ Вверх
-
-BuildContext
+[↑ Вверх](#table-of-contents)
+## BuildContext
 Interface to Element. Used to:
 
 Find ancestors: context.findAncestorWidgetOfExactType<T>()
@@ -463,18 +429,16 @@ Get inherited data: Theme.of(context), MediaQuery.of(context)
 Access render object: (context as Element).renderObject
 → O(1) lookup for InheritedWidget via Element._inheritedWidgets hash map.
 
-↑ Вверх
-
-InheritedWidget
+[↑ Вверх](#table-of-contents)
+## InheritedWidget
 Efficiently propagate data down tree. Child uses context.dependOnInheritedWidgetOfExactType<T>() to:
 
 Get data
 Auto-rebuild when data changes (if updateShouldNotify returns true)
 dart
 1234567
-↑ Вверх
-
-Provider vs InheritedWidget
+[↑ Вверх](#table-of-contents)
+## Provider vs InheritedWidget
 InheritedWidget
 Provider
 Boilerplate
@@ -488,38 +452,33 @@ Simple, no deps
 Recommended for apps
 → Provider is built on top of InheritedWidget.
 
-↑ Вверх
-
-Trees (Widget / Element / Render)
+[↑ Вверх](#table-of-contents)
+## Trees (Widget / Element / Render)
 Widget tree: immutable config (declarative UI).
 Element tree: mutable instances (bridge, manages lifecycle).
 Render tree: layout/paint (geometry, hit testing).
-↑ Вверх
-
-Widget
+[↑ Вверх](#table-of-contents)
+## Widget
 Immutable descriptor. == compares runtimeType + key. Not a tree — just config.
 
-↑ Вверх
-
-Element
+[↑ Вверх](#table-of-contents)
+## Element
 Mutable instance of widget at location. Manages:
 
 Widget ↔ RenderObject binding
 State lifecycle
 InheritedWidget lookup cache
 Rebuild scheduling
-↑ Вверх
-
-RenderObject
+[↑ Вверх](#table-of-contents)
+## RenderObject
 Mutable, does layout/paint. Key properties:
 
 parentData: layout hints from parent
 constraints: size limits from parent
 markNeedsLayout(), markNeedsPaint()
 isRepaintBoundary: isolate paint (e.g. animations)
-↑ Вверх
-
-Types of Widgets
+[↑ Вверх](#table-of-contents)
+## Types of Widgets
 Category
 Role
 Examples
@@ -532,49 +491,43 @@ Padding, Align, Opacity, CustomPaint
 Component
 High-level composition
 Text, Button, Scaffold
-↑ Вверх
-
-Types of Elements
+[↑ Вверх](#table-of-contents)
+T## ypes of Elements
 ComponentElement: for StatelessWidget/StatefulWidget — calls build().
 RenderObjectElement: for render widgets — owns RenderObject.
 SingleChildRenderObjectElement (Padding)
 MultiChildRenderObjectElement (Column)
 SliverMultiBoxAdaptorElement (SliverList)
-↑ Вверх
-
-Element Lifecycle
+[↑ Вверх](#table-of-contents)
+## Element Lifecycle
 Widget.createElement() → Element.mount(parent)
 Child elements created, render objects linked
 On widget change: if runtimeType+key match → update(); else → unmount + new element
 On removal: deactivate() → (inactive ≤ 1 frame) → unmount()
 Reinsertion (e.g. GlobalKey): activate() → reattach render object.
-↑ Вверх
-
-GlobalKey and LocalKey
+[↑ Вверх](#table-of-contents)
+## GlobalKey and LocalKey
 GlobalKey: unique app-wide; preserves state on move (e.g. form).
 LocalKey: unique among siblings:
 ValueKey: stable identity (e.g. list item id)
 ObjectKey: identity tied to object
 UniqueKey: always new (force reset)
-↑ Вверх
-
-Flutter Runtime Architecture
+[↑ Вверх](#table-of-contents)
+## Flutter Runtime Architecture
 12345
 [App Code (Dart)]  
        ↓ WidgetsBinding  
 [Flutter Framework] ←→ [Flutter Engine (C++, Skia/Impeller)]  
        ↓ Platform Channels  
 [Platform (Android/iOS)]
-↑ Вверх
-
-Execution Model
+[↑ Вверх](#table-of-contents)
+## Execution Model
 main() runs
 Event loop starts (microtask + event queues)
 runApp() → WidgetsBinding.attachRootWidget()
 First frame scheduled → beginFrame → drawFrame → render.
-↑ Вверх
-
-CustomPaint and CustomPainter
+[↑ Вверх](#table-of-contents)
+## CustomPaint and CustomPainter
 CustomPaint: widget embedding CustomPainter.
 CustomPainter: logic in paint(Canvas, Size).
 shouldRepaint(covariant old): true → repaint on setState.
@@ -587,9 +540,8 @@ class _LinePainter extends CustomPainter {
   }
   @override bool shouldRepaint(_LinePainter old) => false;
 }
-↑ Вверх
-
-WidgetsFlutterBinding
+[↑ Вверх](#table-of-contents)
+## WidgetsFlutterBinding
 Glue framework ↔ engine. Mixins:
 
 GestureBinding
@@ -599,9 +551,8 @@ PaintingBinding
 SemanticsBinding
 RendererBinding
 WidgetsBinding
-↑ Вверх
-
-Bindings
+[↑ Вверх](#table-of-contents)
+## Bindings
 Binding
 Responsibility
 SchedulerBinding
@@ -610,9 +561,8 @@ RendererBinding
 Render tree ↔ engine sync
 WidgetsBinding
 Widget tree lifecycle, addPostFrameCallback
-↑ Вверх
-
-Platform Channels
+[↑ Вверх](#table-of-contents)
+## Platform Channels
 Async Dart ↔ native (Java/Kotlin/Swift) comms. Types:
 
 MethodChannel: call native methods
@@ -620,9 +570,8 @@ EventChannel: receive native streams
 BasicMessageChannel: raw binary (e.g. StandardMessageCodec)
 ⚠️ Only main isolate.
 
-↑ Вверх
-
-Build Modes
+[↑ Вверх](#table-of-contents)
+## Build Modes
 Mode
 Compiler
 Use
@@ -635,9 +584,8 @@ Performance profiling
 release
 AOT
 Production (obfuscation, tree shaking)
-↑ Вверх
-
-Package vs Plugin vs FFI Plugin
+[↑ Вверх](#table-of-contents)
+## Package vs Plugin vs FFI Plugin
 Type
 Dart-only
 Native code
@@ -654,9 +602,8 @@ FFI Plugin
 ✅
 ✅ (Dart FFI + C/C++)
 High-perf native (no channel overhead)
-↑ Вверх
-
-Animations
+[↑ Вверх](#table-of-contents)
+## Animations
 Animation Stages
 AnimationController(vsync: this)
 vsync → SchedulerBinding → engine onBeginFrame
@@ -672,34 +619,29 @@ vsync and Ticker
 vsync: prevents off-screen animation jank (no frames when app backgrounded).
 TickerProviderStateMixin (single) vs TickerProviderStateMixin (multiple).
 SingleTickerProviderStateMixin preferred (lighter).
-↑ Вверх
-
-Frame Construction
+[↑ Вверх](#table-of-contents)
+## Frame Construction
 External event (e.g. setState) → scheduleFrame()
 Engine → onBeginFrame → run tickers (animations)
 Engine → onDrawFrame → layout → paint → scene
 post-frame callbacks → done.
-↑ Вверх
-
-Layout Calculation
+[↑ Вверх](#table-of-contents)
+## Layout Calculation
 Constraints flow down (parent → child)
 Sizes flow up (child → parent)
 Parent positions children.
-↑ Вверх
-
-BuildOwner and PipelineOwner
+[↑ Вверх](#table-of-contents)
+## BuildOwner and PipelineOwner
 BuildOwner: manages element tree rebuilds (scheduleBuildFor, buildScope).
 PipelineOwner: manages render tree updates (layout, paint, compositing).
-↑ Вверх
-
-Garbage Collector
+[↑ Вверх](#table-of-contents)
+## Garbage Collector
 Two generations:
 
 Young: Scavenge (copy live → survivor space)
 Old: Mark-sweep-compact (parallel mark, concurrent sweep).
-↑ Вверх
-
-Task Runners
+[↑ Вверх](#table-of-contents)
+## Task Runners
 Runner
 Runs on
 Purpose
@@ -715,9 +657,8 @@ Skia/Impeller rasterization
 IO
 Background
 Asset loading, I/O
-↑ Вверх
-
-MediaQuery — beyond size
+[↑ Вверх](#table-of-contents)
+## MediaQuery — beyond size
 Use for:
 
 textScaleFactor (accessibility)
@@ -726,9 +667,8 @@ highContrast, disableAnimations (a11y)
 viewInsets (keyboard avoidance)
 → Prefer MediaQuery over hardcoded sizes.
 
-↑ Вверх
-
-LayoutBuilder vs MediaQuery
+[↑ Вверх](#table-of-contents)
+## LayoutBuilder vs MediaQuery
 LayoutBuilder
 MediaQuery
 Input
@@ -742,19 +682,16 @@ Responsive to container size (e.g. grid columns)
 Responsive to device (e.g. phone vs tablet)
 Example:
 
-dart
-1234
-↑ Вверх
+[↑ Вверх](#table-of-contents)
 
-FutureBuilder internals
+## FutureBuilder internals
 Avoid rebuilding Future in build() (creates new future → resets state).
 Pass pre-constructed Future:
 dart
 123456
 States: ConnectionState.waiting → snapshot.hasData / hasError.
-↑ Вверх
-
-AppLifecycleState — full breakdown
+[↑ Вверх](#table-of-contents)
+## AppLifecycleState — full breakdown
 State
 Meaning
 resumed
@@ -767,9 +704,8 @@ detached
 Engine running, but no UI attached (e.g. during navigation pop, or headless isolate)
 → Handle paused/detached to pause expensive tasks.
 
-↑ Вверх
-
-Slivers — advanced
+[↑ Вверх](#table-of-contents)
+## Slivers — advanced
 Slivers = lazy, scroll-aware render objects.
 
 SliverAppBar: collapsible app bar
@@ -779,14 +715,11 @@ SliverFillRemaining: fill remaining space
 SliverToBoxAdapter: wrap non-sliver in sliver
 Use CustomScrollView to combine slivers.
 
-dart
-1234567
-↑ Вверх
+[↑ Вверх](#table-of-contents)
 
-Architecture
-↑ Вверх
-
-Clean Architecture
+## Architecture
+[↑ Вверх](#table-of-contents)
+## Clean Architecture
 Layers:
 
 Data: sources (API, cache), repos
@@ -794,9 +727,8 @@ Domain: entities, use cases (business logic)
 Presentation: UI, state (BLoC, ViewModels)
 → Dependencies flow inward (Domain ← Presentation; Domain ← Data).
 
-↑ Вверх
-
-State Management
+[↑ Вверх](#table-of-contents)
+## State Management
 Approach
 Pros
 Cons
@@ -815,15 +747,13 @@ Unscalable, violates SRP
 Prototypes, tiny widgets
 → You prefer BLoC + Dio + no local DB.
 
-↑ Вверх
-
-Dependency Injection
+[↑ Вверх](#table-of-contents)
+## Dependency Injection
 Manual DI: constructor injection (explicit, no framework).
 get_it / Riverpod: service locator / provider-based.
 → Avoid global singletons.
-↑ Вверх
-
-Architectural Patterns
+[↑ Вверх](#table-of-contents)
+## Architectural Patterns
 Pattern
 Flow
 Use
@@ -836,15 +766,13 @@ Testable UI logic
 BLoC
 UI → Sink(event) → BLoC → Stream(state) → UI
 Your stack ✅
-↑ Вверх
-
-Navigation
+[↑ Вверх](#table-of-contents)
+## Navigation
 Navigator 2.0 (declarative, complex routing)
 go_router (recommended): deep links, route guards, path params
 auto_route: codegen, type-safe, protected routes.
-↑ Вверх
-
-Databases
+[↑ Вверх](#table-of-contents)
+## Databases
 DB
 Pros
 Cons
@@ -863,9 +791,8 @@ Boilerplate, slower
 Complex data, offline
 → You avoid local DBs — prefer remote + cache.
 
-↑ Вверх
-
-Testing
+[↑ Вверх](#table-of-contents)
+## Testing
 Types of Tests
 Type
 Scope
@@ -879,72 +806,63 @@ flutter_test, WidgetTester
 Integration
 Full app flow
 integration_test, flutter_driver
-↑ Вверх
-
-TDD
+[↑ Вверх](#table-of-contents)
+## TDD
 Write failing test
 Implement minimal code to pass
 Refactor
 → Ensures test coverage, design clarity.
-↑ Вверх
-
-Development Patterns
+[↑ Вверх](#table-of-contents)
+## Development Patterns
 Generative: Factory, Builder, Singleton
 Structural: Adapter, Decorator, Proxy
 Behavioral: Observer, Strategy, Command
-↑ Вверх
-
-Advanced Topics
-Tree Shaking
+[↑ Вверх](#table-of-contents)
+## Advanced Topics
+## Tree Shaking
 Removes unused code at compile time (AOT).
 
 Works on static analysis — avoid dynamic calls (noSuchMethod, reflection).
 Effective in Dart due to strong typing.
-↑ Вверх
-
-Code-splitting (Deferred Components)
+[↑ Вверх](#table-of-contents)
+## Code-splitting (Deferred Components)
 Split APK/AAB into on-demand modules (e.g. admin panel, onboarding).
 
 Android: Play Feature Delivery
 iOS: On-Demand Resources
 deferred keyword + loadLibrary().
-↑ Вверх
-
-Internationalization (gen-l10n)
-Modern Flutter way (replaces intl):
+[↑ Вверх](#table-of-contents)
+## Internationalization (gen-l10n)
+## Modern Flutter way (replaces intl):
 
 Define .arb files: app_en.arb, app_ru.arb
 flutter gen-l10n → generates AppLocalizations
 Use: AppLocalizations.of(context).helloWorld
 → Type-safe, tooling support.
 
-↑ Вверх
-
-FlutterActivity responsibilities
+[↑ Вверх](#table-of-contents)
+## FlutterActivity responsibilities
 On Android, FlutterActivity handles:
 
-Launch screen display
+## Launch screen display
 Status bar configuration
 Dart entrypoint (main) selection
 Initial route
 Transparent rendering
 Instance state save/restore.
-↑ Вверх
-
-Accessibility Considerations
+[↑ Вверх](#table-of-contents)
+## Accessibility Considerations
 Semantics() widget: label, hint, traits
 Sufficient contrast (MediaQuery.platformBrightness)
 Test with TalkBack / VoiceOver
 Avoid Column(children: [Icon(), Text()]) — wrap in Semantics(container: true).
-↑ Вверх
-
-Obfuscation
+[↑ Вверх](#table-of-contents)
+## Obfuscation
 flutter build --obfuscate --split-debug-info=...
 Renames classes/methods; debug symbols stored separately.
 Does not encrypt strings or logic — combine with R8/ProGuard.
-↑ Вверх
-
-MITM Protection
+[↑ Вверх](#table-of-contents)
+## MITM Protection
 HTTPS only + certificate pinning (dio + dio_http2_adapter)
 Validate certs (avoid badCertificateCallback: (_) => true)
 Use secure DNS (DoH/DoT).
