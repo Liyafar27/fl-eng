@@ -237,6 +237,7 @@ Mixins in Dart are defined by the keyword `mixin`. They can contain methods, fie
 If the mixins have a method with the same name, then the implementation that is specified in the last mixin will remain. Since mixins will override this method
 
 ---
+
 <!-- TOC --><a name="sound-null-safety"></a>
 [↑ Вверх](#table-of-contents)
 
@@ -244,6 +245,8 @@ If the mixins have a method with the same name, then the implementation that is 
 `Sound Null Safety` is an addition to the Dart language that strengthens the type system by separating types that allow the value of `Null` from types that do not allow the value of `Null`. This allows developers to prevent errors related to `Null`.  
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="type-system"></a>
 ### Type system
 <p align="left" width="100%">
@@ -265,16 +268,22 @@ With the advent of null safety in Dart, the hierarchy of classes and interfaces 
 - The keywords `late` and `required` have been introduced to indicate variables that can be initialized later and must be initialized when declaring, respectively.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="late"></a>
 ### Late
 `Late` is a keyword in dart that allows you to declare a non-nullable variable without setting a value for it. The value is initialized only when we access it. 
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="generics"></a>
 ### Generics
 `Generics` are parameterized types. They allow the program to get away from being tightly bound to certain types, define the functionality so that it can use data of any type and ensure their security. Generalizations also reduce code repeatability and give you the opportunity to provide a single interface and implementation for many types.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="dart-vm"></a>
 ### Dart VM
 `Dart VM (Dart virtual machine)` - Dart runtime environment
@@ -288,6 +297,8 @@ Components:
 - `ARM Architecture Simulator`
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="zones"></a>
 ### Zones
 A zone is a mechanism that allows you to manage and handle errors and other events that occur in certain areas of the code.
@@ -298,6 +309,8 @@ A zone is a mechanism that allows you to manage and handle errors and other even
 4. Perform the operation every time the code enters or exits the zone. These operations may include starting or stopping a timer or saving a stacktrace.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="types-of-errors"></a>
 ### Types of errors
 `Exception` is a general class for exceptions that usually occur due to errors in the program, and they can be handled and recovered from:
@@ -343,12 +356,16 @@ A zone is a mechanism that allows you to manage and handle errors and other even
 
 ---
 <!-- TOC --><a name="naming-rules"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Naming rules
 - Variables and constants - `lowerCamelCase`
 - Classes, mixins, enums - `UpperCamelCase`
 - Files - `snake_case`
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="never"></a>
 ### Never
 `Never` is a type, meaning that no type is allowed and `Never` itself cannot be created. It is used as a return type in case of a guaranteed error.
@@ -359,11 +376,15 @@ A zone is a mechanism that allows you to manage and handle errors and other even
 `Covariant` is a keyword in dart that indicates that the type of the return value can be changed to a narrower type in the subclass.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="annotations"></a>
 ### Annotations
 `Annotations` are syntactic metadata that can be added to the code. In other words, it is an opportunity to add additional information to any component of the code, for example, to a class or method. Annotations always start with the character `@` (`@override`, `@required`). Any class can serve as an annotation if a const constructor is defined in it.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="int8-uint8-int16-uint16"></a>
 ### int8, uint8, int16, uint16...
 |Specifier|Common Equivalent|Bytes|Minimum value|Maximum value|
@@ -378,6 +399,8 @@ A zone is a mechanism that allows you to manage and handle errors and other even
 |uint64|unsigned long long|8|0|18,446,744,073,709,551,615|
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="future"></a>
 ### Future
 `Future` is a wrapper over the result of an asynchronous operation. The Future code is NOT executed in parallel, but is executed in a sequence defined by the Event Loop.
@@ -387,6 +410,8 @@ Future states:
 - Completed with Error - the operation was completed with an error
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="future-constructors"></a>
 ### Future Constructors
 - `Future(FutureOr<T> computation())`: Creates a future object that uses the Timer.run method to run the computation function asynchronously and returns its result.
@@ -398,11 +423,15 @@ Future states:
 - `Future.value([FutureOr<T> value])`: creates a Future object that contains the value value.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="await-under-the-hood"></a>
 ### Await under the hood
 Under the hood, `await` moves all subsequent code to `then` at `Future`, which we are waiting for
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="event-loop"></a>
 ### Event Loop
 The `Event Loop` is an eternal loop that executes all incoming tasks to the isolate.
@@ -415,11 +444,15 @@ It is used for very short actions that must be performed asynchronously, immedia
 It is used for scheduling operations that receive results from external events (I/O operations, gestures, drawing, timers, threads)
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="completer"></a>
 ### Completer
 The `Completer` allows you to supply a Future, send an execution event, or an error event. This can be useful when you need to make a Future chain and return the result.
 
 --- 
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="stream"></a>
 ### Stream
 A `stream` is a sequence of asynchronous events. Stream tells you that there is an event and when it will be ready  
@@ -427,6 +460,8 @@ A `stream` is a sequence of asynchronous events. Stream tells you that there is 
 - `Broadcast` is a type of stream where there can be many subscribers. At the same time, Broadcast streams give their data regardless of whether someone is subscribed to them or not. Stream subscribers receive events only from the moment of subscription, and not from the moment of the start of the stream`s life
 
 --- 
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="generators-sync-async"></a>
 ### Generators (sync* / async*)  
 `Generator` this is a keyword that allows you to create a sequence of values using `yield`
@@ -434,21 +469,29 @@ A `stream` is a sequence of asynchronous events. Stream tells you that there is 
 - *async** is an asynchronous generator. Returns `Stream`
 	
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="multithreading-in-dart-and-flutter"></a>
 ### Multithreading in Dart and Flutter 
 `Dart` is a single—threaded programming language. It executes one instruction at a time. But at the same time, we can run the code in a separate thread using `Isolate`
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="isolate"></a>
 ### Isolate
 `Isolate` is a lightweight process (execution thread) that runs in parallel with other threads and processes in the application. Each `Isolate` in Dart has its own instance of the Dart virtual machine, its own memory and is controlled using its own `Event Loop`.
 
 --- 
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="compute"></a>
 ### Compute
 `Compute` is a function that creates an isolate and runs the passed code.
 	
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="multithreading-issues"></a>
 ### Multithreading issues
 
@@ -461,12 +504,16 @@ A `stream` is a sequence of asynchronous events. Stream tells you that there is 
 ## Flutter
 
 <!-- TOC --><a name="stateless-and-stateful-widgets"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Stateless and Stateful widgets
 - `StatelessWidget` is a widget that has no state and does not change its properties during the operation of the application. They can only be changed through external events that occur in the parent widgets. 
 - `StatefulWidget` is a widget that stores the state, during the operation of the application it can change it dynamically using `setState()`. 
 
 ---
 <!-- TOC --><a name="stateful-widget-lifecycle"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Stateful Widget Lifecycle
 1. `createState()` is called once and creates a changeable state for this widget at a specified location in the tree
 2.  `mounted is true`
@@ -481,6 +528,8 @@ A `stream` is a sequence of asynchronous events. Stream tells you that there is 
 
 --- 
 <!-- TOC --><a name="buildcontext"></a>
+[↑ Вверх](#table-of-contents)
+
 ### BuildContext
 The `BuildContext` is the interface that implements the `Element`. 
 
@@ -491,6 +540,8 @@ The `BuildContext` is the interface that implements the `Element`.
 
 ---
 <!-- TOC --><a name="inheritedwidget"></a>
+[↑ Вверх](#table-of-contents)
+
 ### InheritedWidget
 An `InheritedWidget` is a widget that provides its descendants with the ability to interact with the data stored in it. Solves the problem with passing data through constructors. It can notify widgets at the bottom of the tree about changes in its own data, thereby provoking their redrawing.  
 To get an Inherited widget, call `context.dependOnInheritedWidgetOfExactType<T extends InheritedWidget>()`in `didChangeDependencies()`
@@ -499,6 +550,8 @@ To get an Inherited widget, call `context.dependOnInheritedWidgetOfExactType<T e
 
 ---
 <!-- TOC --><a name="trees"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Trees
 ![](https://docs.flutter.dev/assets/images/docs/arch-overview/trees.png )
 - The `Widget Tree` consists of `Widgets` that are used to describe the user interface
@@ -507,21 +560,29 @@ To get an Inherited widget, call `context.dependOnInheritedWidgetOfExactType<T e
 	
 ---
 <!-- TOC --><a name="widget"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Widget
 A `Widget` is an immutable description of a part of the user interface. The widget is associated with the element that controls the rendering. Widgets form a structure, not a tree 
 
 ---
 <!-- TOC --><a name="element"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Element
 An `Element` is a mutable representation of a widget at a specific location in the tree. They manage the lifecycle, link widgets and rendering objects.
 
 ---
 <!-- TOC --><a name="renderobject"></a>
+[↑ Вверх](#table-of-contents)
+
 ### RenderObject
 `RenderObject` is a mutable object of the visualization tree. It has a parent object, as well as a data field that the parent object uses to store specific information about the object itself, for example, its position. This object is responsible for rendering, accounting for sizes and constraints, listening and processing clicks. If necessary, it is marked as `dirty`. It is redrawn using its own `layer` method
 
 ---
 <!-- TOC --><a name="types-of-widgets"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Types of widgets
 `Proxies` are widgets that store some information and make it available to posterity. These widgets are not directly involved in shaping the user interface, but are used to get the information they can provide.
 - `InheritedWidget`
@@ -545,6 +606,8 @@ An `Element` is a mutable representation of a widget at a specific location in t
 
 ---
 <!-- TOC --><a name="types-of-elements"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Types of elements
 ![image](https://user-images.githubusercontent.com/80569772/205450564-87d6c2d0-a994-4d1d-bbaa-2c8f7fb07385.png)
 A `ComponentElement` is a layout element that does not explicitly contain drawing/display logic. There is a `build()` method that returns the widget. It is formed only when creating widgets `StatelessWidget`, `StatefulWidget`, `InheritedWidget`.
@@ -563,6 +626,8 @@ A `ComponentElement` is a layout element that does not explicitly contain drawin
 
 ---
 <!-- TOC --><a name="the-life-cycle-of-an-element"></a>
+[↑ Вверх](#table-of-contents)
+
 ### The life cycle of an Element
 1. The element is created by calling the `Widget.createElement` method and is configured by the widget instance from which the method was called.
 2. Using the `mount` method, the created element is added to the specified position of the parent element. When calling this method, child widgets are also associated and objects of the rendering tree are mapped to the elements.
@@ -574,11 +639,15 @@ A `ComponentElement` is a layout element that does not explicitly contain drawin
 
 ---
 <!-- TOC --><a name="globalkeys"></a>
+[↑ Вверх](#table-of-contents)
+
 ### GlobalKeys
 `GlobalKeys` are keys that provide access to widgets. For stateful widgets, global keys also provide access to the state. Allow widgets to change parents anywhere in the application without losing state. They must be unique to the entire application.
 
 ---
 <!-- TOC --><a name="localkeys"></a>
+[↑ Вверх](#table-of-contents)
+
 ### LocalKeys
 `LocalKeys` are the keys that are needed to identify widgets in a collection with the same values and must be unique among widgets with the same parent widget. They can be used for tests:
 - `ValueKey` is a key that uses a value of a certain type to identify itself. Overrides the comparison operator. If the value is the same, then the keys are the same
@@ -587,6 +656,8 @@ A `ComponentElement` is a layout element that does not explicitly contain drawin
 
 ---
 <!-- TOC --><a name="the-flutter-device-is-under-the-hood"></a>
+[↑ Вверх](#table-of-contents)
+
 ### The Flutter device is under the hood
 ![image](https://user-images.githubusercontent.com/80569772/203052487-937d5923-9571-4752-9762-f0d6637b675e.png)
 
@@ -604,6 +675,8 @@ The `Flutter Engine` notifies the `Flutter Framework` when:
 
 ---
 <!-- TOC --><a name="execution-model-in-flutter"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Execution model in Flutter
 1. A new process is created and launched — `Thread (Isolate)`. This is the only process in which your application will run.
 2. Two queues with `MicroTask` and `Event` are initialized, the queue type is `FIFO` (note: first in first out, i.e. messages that arrived earlier will be processed earlier)
@@ -613,11 +686,15 @@ The `Flutter Engine` notifies the `Flutter Framework` when:
 
 ---
 <!-- TOC --><a name="custompaint"></a>
+[↑ Вверх](#table-of-contents)
+
 ### CustomPaint
 `CustomPaint` is a class that creates a "canvas" for drawing. The `paint` method uses `canvas` as arguments, which allows you to draw various shapes
 
 ---
 <!-- TOC --><a name="widgetsflutterbinding"></a>
+[↑ Вверх](#table-of-contents)
+
 ### WidgetsFlutterBinding
 `WidgetsFlutterBinding` is a specific implementation of application binding based on the widget infrastructure. In essence, it is the glue connecting the framework and the Flutter engine. The `WidgetsFlutterBinding` consists of many links: `GestureBinding`, `ServicesBinding`, `SchedulerBinding`, `PaintingBinding`, `SemanticsBinding`, `RendererBinding`, `WidgetsBinding`.
 
@@ -627,6 +704,8 @@ The `scheduleWarmUpFrame` method belongs to `SchedulerBinding` and is used to sc
 
 ---
 <!-- TOC --><a name="bindings"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Bindings
 ![image](https://user-images.githubusercontent.com/80569772/203303949-aadb037a-c818-4f63-8ad8-67c3812a96ad.png)
 
@@ -654,6 +733,8 @@ The `scheduleWarmUpFrame` method belongs to `SchedulerBinding` and is used to sc
 
 ---
 <!-- TOC --><a name="platform-channels"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Platform Channels
 
 ![image](https://user-images.githubusercontent.com/80569772/202891758-b7cc7db9-3b4c-4ce3-9f91-37f9a1a614a1.png)
@@ -676,6 +757,8 @@ The `platform channel` is a two—way communication channel between the dart cod
 
 ---
 <!-- TOC --><a name="build-modes"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Build Modes
 - `Debug` (`JIT`) for development
 - `Release` (`AOT`) to publish the application
@@ -683,17 +766,23 @@ The `platform channel` is a two—way communication channel between the dart cod
 
 ---
 <!-- TOC --><a name="package-and-plugin"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Package and Plugin
 - `Package` is written only in dart
 - `Plugin` uses dart and platform-specific code
 
 ---
 <!-- TOC --><a name="ffi-plugin"></a>
+[↑ Вверх](#table-of-contents)
+
 ### FFI Plugin
 - `FFI Plugin` is a plugin that uses [Dart FFI] to write platform-specific parts (https://dart.dev/guides/libraries/c-interop ). Allows you to run code in C/C++
 
 ---
 <!-- TOC --><a name="animation-stages"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Animation stages
 - `Ticker` asks `SchedulerBinding` to register a callback and tell `Flutter Engine` to wake it up when a new callback appears. 
 - When the `Flutter Engine` is ready, it calls `SchedulerBinding` via the `onBeginFrame` request. 
@@ -704,17 +793,23 @@ The `platform channel` is a two—way communication channel between the dart cod
 	
 ---
 <!-- TOC --><a name="types-of-animations"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Types of animations
 - `Tween animation`. The beginning, the end, the time, the speed are determined in advance  
 - `Physics-based animation`. Imitate real behavior
 
 ---
 <!-- TOC --><a name="what-is-a-tween"></a>
+[↑ Вверх](#table-of-contents)
+
 ### What is a Tween
 A `Tween` is an object that describes between which values the widget is animated and is responsible for calculating the current animation value
 	
 ---
 <!-- TOC --><a name="tween-animations"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Tween animations
 - `Implicit Animations` is a set of `Implicitly Animated Widgets` that animate themselves when they are rebuilt with new arguments. (`AnimatedAlign`, `AnimatedContainer`, `AnimatedPadding`, etc.)
 - `Explicit Animations` is a set of animation effects controls. They provide much more control over animation than `Implicit Animations`. To use it, you need to mix `SingleTickerProviderStateMixin` / `TickerProviderStateMixin` to the state of your widget, create an `AnimationController` and `Animation` depending on it, pass the animation to the `Transition Widget` (`AlignTransition`, `DecoratedBoxTransition`, `SizeTransition`, etc.)
@@ -725,6 +820,8 @@ A `Tween` is an object that describes between which values the widget is animate
 
 ---
 <!-- TOC --><a name="frame-construction"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Frame construction
 1. Some external events lead to the need to update the display. 
 2. The `Schedule Frame` is sent to the `Flutter Engine` 
@@ -739,6 +836,8 @@ A `Tween` is an object that describes between which values the widget is animate
 
 ---
 <!-- TOC --><a name="layout-calculation"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Layout calculation
 - Restrictions go down the tree, from parents to children.
 - Sizes go up the tree from children to parents.
@@ -746,6 +845,8 @@ A `Tween` is an object that describes between which values the widget is animate
 
 ---
 <!-- TOC --><a name="buildowner"></a>
+[↑ Вверх](#table-of-contents)
+
 ### BuildOwner
 `BuildOwner` is the manager for building and updating the element tree. He is actively involved in two phases — assembly and completion of assembly. Since the `BuildOwner` manages the tree assembly process, it stores lists of inactive items and lists of items that need updating.  
 Methods:
@@ -756,11 +857,15 @@ Methods:
 - `reassemble` ensures the operation of the `HotReload` mechanism. This mechanism allows you not to rebuild the project with changes, but to send a new version of the code to `DartVM` and initiate a tree update.
 	
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="pipelineowner"></a>
 ### PipelineOwner
 `PipelineOwner` is an assembly manager that works with the display tree.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="garbage-collector"></a>
 ### Garbage Collector
 The `Garbage Collector` is an algorithm that monitors links and cleans up memory in order to prevent it from overflowing.
@@ -781,6 +886,8 @@ The amount of memory used can be divided into two spaces: active and inactive. N
 
 ---
 <!-- TOC --><a name="task-runners"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Task Runners
 ![image](https://user-images.githubusercontent.com/80569772/211004726-1eeef86f-cebf-41de-8bb3-a8485257565f.png)  
 - `Platform Task Runner`: The main flow of the platform. The plugin code is executed here. For more information, see the UIKit documentation for iOS or the MainThread documentation for Android. This thread is not displayed in the performance overlay.
@@ -793,11 +900,15 @@ The amount of memory used can be divided into two spaces: active and inactive. N
 <!-- TOC --><a name="architecture"></a>
 ## Architecture
 <!-- TOC --><a name="architecture-1"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Architecture
 Architecture is a set of solutions for the organization of a program. Such as dividing the program into layers, building links between them, managing the state, and communicating with the UI. A good architecture makes the layers in the application loosely connected, which makes it easier to make changes, increases the testability of the code, and simplifies the system  
 
 ---
 <!-- TOC --><a name="clean-architecture"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Clean architecture
 Pure architecture is an architecture that follows `SOLID` and is divided into three independent layers:  
 - `Data (datasources, models, repositories)` getting data from the outside
@@ -809,6 +920,8 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 ---
 <!-- TOC --><a name="state-management"></a>
 ### State Management
+[↑ Вверх](#table-of-contents)
+
 
 **Vanilla**   
 	
@@ -891,6 +1004,8 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 - DI
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="dependency-injection"></a>
 ### Dependency Injection  
 `Dependency injection (DI)` is a mechanism that allows you to make objects interacting in an application loosely coupled using interfaces. This makes the entire system more flexible, adaptable and extensible.
@@ -898,6 +1013,8 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 ---
 <!-- TOC --><a name="architectural-patterns"></a>
 ### Architectural patterns
+[↑ Вверх](#table-of-contents)
+
 ![](https://fuzeservers.ru/wp-content/uploads/2/6/8/268a107e69309f0529c18aae72769bdb.png)
 **MVVM** 
 
@@ -936,6 +1053,8 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 
 ---
 <!-- TOC --><a name="ways-to-navigate"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Ways to navigate
 **Navigator**
 - It comes out of the box  
@@ -955,6 +1074,8 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 
 ---
 <!-- TOC --><a name="databases"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Databases
 **Non-relational (NoSQL):**  
 **Hive** 
@@ -1038,9 +1159,13 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 - Storage of complex structured data
 
 <!-- TOC --><a name="testing"></a>
+[↑ Вверх](#table-of-contents)
+
 ## Testing
 
 <!-- TOC --><a name="types-of-tests"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Types of tests
 - A `unit test` tests a single function, method, or class. Its purpose is to check the correctness of a certain function, method, or class. External dependencies for the module under test are usually passed as a parameter.
 - `Widget test` tests one widget. The purpose of such a test is to make sure that the widget`s user interface looks and interacts as planned. Widget testing takes place in a test environment that provides the context of the widget`s lifecycle. Also, the widget under test should be able to receive user actions and events and respond to them. 
@@ -1048,10 +1173,14 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 
 ---
 <!-- TOC --><a name="tdd"></a>
+[↑ Вверх](#table-of-contents)
+
 ### TDD
 `TDD` is an application development technique in which first a test is written covering the desired change, and then the code that will allow the test to pass.
 
 <!-- TOC --><a name="development-patterns"></a>
+[↑ Вверх](#table-of-contents)
+
 ## Development patterns
 *Generative*. They are responsible for convenient and safe creation of new objects or even entire families of objects.  
 - Factory Method. A generative design pattern that defines a common interface for creating objects in a superclass, allowing subclasses to change the type of objects being created.
