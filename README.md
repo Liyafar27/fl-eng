@@ -1210,4 +1210,63 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 - Template Method (Template Method). A behavioral design pattern that defines the skeleton of an algorithm, shifting responsibility for some of its steps to subclasses. The pattern allows subclasses to redefine the steps of the algorithm without changing its overall structure.
 - Visitor. A behavioral design pattern that allows you to add new operations to the program without changing the classes of objects on which these operations can be performed.
 
-[More details](https://refactoring.guru/en/design-patterns/catalog )
+ DRY (Don't Repeat Yourself)
+Смысл:
+* Не повторяй код.
+* Логика, данные и функционал должны быть в одном месте, чтобы при изменении не нужно было править всё вручную.
+Пример:
+❌ Плохо:
+
+void printUserName1(User user) {
+  print('User: ${user.name}');
+}
+
+void printUserName2(User user) {
+  print('User: ${user.name}');
+}
+✅ Хорошо:
+
+void printUserName(User user) {
+  print('User: ${user.name}');
+}
+Применение:
+* Создание функций, утилит, общих виджетов
+* Избегание дублирования бизнес-логики
+
+2. KISS (Keep It Simple, Stupid)
+Смысл:
+* Держи код простым и понятным.
+* Не усложняй архитектуру, если задача решается проще.
+Пример:
+❌ Плохо:
+
+// Сложная проверка с множеством условий
+if ((a && b) || (!a && b && c) || ...) { ... }
+✅ Хорошо:
+
+if (isValid(a, b, c)) { ... } // функция скрывает сложность
+Применение:
+* Простые функции вместо гигантских методов
+* Лёгкая поддержка и читаемость
+
+3. YAGNI (You Aren’t Gonna Need It)
+Смысл:
+* Не добавляй функционал заранее, пока он реально не нужен.
+* Минимизирует лишнюю сложность и баги.
+Пример:
+❌ Плохо:
+
+class User {
+  String name;
+  int age;
+  String? futureFeature; // пока не используется
+}
+✅ Хорошо:
+
+class User {
+  String name;
+  int age;
+}
+Применение:
+* Не добавляем методы и свойства до реальной необходимости
+* Принцип Lean-разработки
