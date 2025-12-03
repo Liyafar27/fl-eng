@@ -118,7 +118,7 @@ Clients should not implement logic that they do not use.
 - `Dependency Inversion Principle`
 The modules of the upper levels should not depend on the modules of the lower levels. Classes of both upper and lower levels should depend on the same abstractions (and abstractions should not know about the details).
 
----ё
+---
 
 [↑ Вверх](#table-of-contents)
 
@@ -136,6 +136,8 @@ Fix
 2. `Completion of correction`. From the `hotfix/fix_name` branch, the fix is merged into `develop` and `master`, the fix branch is deleted 
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="data-structures"></a>
 ### Data structures
 Data structures are needed to store data in a suitable way    
@@ -148,18 +150,24 @@ Data structures are needed to store data in a suitable way
 - `Hash tables`  
 
 --- 
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="imperative-and-declarative-programming"></a>
 ### Imperative and declarative programming
 - `Imperative style` - we describe **how** to achieve the desired result  
 - `Declarative style` - we describe ** what kind of result ** we need
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="stack-and-heap"></a>
 ### Stack and heap
 - A `stack` is an area of RAM that stores temporary data such as local variables and function return addresses. The amount of memory allocated for the stack is limited. The stack works in LIFO order  
 - A `heap` is an area of RAM in which data created during program execution is stored. The heap is used to dynamically allocate memory for objects that can change size during program execution. The heap size is set when the application is launched, but, unlike the stack, it is limited only physically. Memory allocation on the heap is slower than on the stack.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="dao-dto-vo-bo"></a>
 ### DAO, DTO, VO, BO
 - `DAO (Data Access Object, data access Object)` is an abstract interface to some type of database or other storage mechanism  
@@ -168,6 +176,8 @@ Data structures are needed to store data in a suitable way
 - `BO (Business Object, business object)` is an object that represents an entity from a certain "domain", that is, the industry for which the application was developed  
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="di-and-service-locator"></a>
 ### DI and Service Locator
 - `DI` - passing class dependencies through constructor parameters
@@ -178,34 +188,46 @@ The `Service Locator` can be accessed from anywhere in the code. This is its mai
 <!-- TOC --><a name="dart"></a>
 ## Dart
 <!-- TOC --><a name="final-and-const"></a>
+[↑ Вверх](#table-of-contents)
+
 ### final and const
 - `final` is calculated in runtime. Only the instance value is constant. When using a final instance, a new memory area is allocated in memory, even if the object value is identical. 
 - `const` is calculated at compile time.  Not only the value is constant, but also the instance itself. When using a const variable, a new memory area is not allocated, but a reference to an existing instance is used.
 
 ---
 <!-- TOC --><a name="jit-and-aot"></a>
+[↑ Вверх](#table-of-contents)
+
 ### JIT and AOT
 - `Just-in-time (JIT) compilation` is a type of compilation that is performed directly while the program is running, which significantly speeds up the development cycle. But it should be borne in mind that the program may slow down and run slower
 - `Ahead-of-time (AOT) compilation` is a type of compilation that is fully executed before running a program. The Dart code is converted to native machine code, which is then packaged into a binary file with the extension `.so` for `Android` or `.dylib` for `iOS`. `AOT` Takes longer than `JIT`, but as a result, the program runs much faster.
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="hot-restart-and-hot-reload"></a>
 ### Hot Restart and Hot Reload
 - `Hot Reload` loads the changes to the `Dart VM` and reboots the widget tree, saving the state. Does not restart `main()` and `initState()`
 - `Hot Restart` loads the changes to the `Dart VM` and restarts the entire application. Restarts `main()` and `initState()`. The state is not saved
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="hashcode"></a>
 ### HashCode
 A `hash code` is a getter for any object that returns an `int`. It is needed when saving an object to `map` or `set`. Hash codes must be the same for objects that are equal to each other according to the == operator  
 `int get hashCode => Object.hash(runtimeType, ..., ...);`
 
 ---
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="extension"></a>
 ### Extension
 `Extension` is a syntactic sugar that allows you to extend an existing class (add methods, operators, setters and getters)
 
 --- 
+[↑ Вверх](#table-of-contents)
+
 <!-- TOC --><a name="mixin"></a>
 ### Mixin
 A `mixin` is a multiple inheritance mechanism that allows classes to use the functionality of other classes without explicit inheritance.
@@ -216,6 +238,8 @@ If the mixins have a method with the same name, then the implementation that is 
 
 ---
 <!-- TOC --><a name="sound-null-safety"></a>
+[↑ Вверх](#table-of-contents)
+
 ### Sound Null Safety
 `Sound Null Safety` is an addition to the Dart language that strengthens the type system by separating types that allow the value of `Null` from types that do not allow the value of `Null`. This allows developers to prevent errors related to `Null`.  
 
