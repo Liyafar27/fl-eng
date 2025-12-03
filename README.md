@@ -198,7 +198,7 @@ class Logger {
 }#
 ```
 
-JIT and AOT
+## JIT and AOT
 JIT (Debug)
 AOT (Release/Profile)
 When
