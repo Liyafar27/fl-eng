@@ -1,16 +1,3 @@
-https://github.com/p0dyakov/flutter_interview/assets/80569772/68dccc7f-b4f2-4eca-932a-8f9fe5559b5f
-
-**Repositories:**  
-[Flutter Interview](https://github.com/p0dyakov/flutter_interview) •  
-[Flutter Roadmap](https://github.com/p0dyakov/flutter_roadmap) •  
-[Flutter Articles](https://github.com/p0dyakov/flutter_articles) •  
-[Flutter Best Packages](https://github.com/p0dyakov/flutter_best_packages) •  
-[Flutter Tools](https://github.com/p0dyakov/flutter_tools)
-
----
-
-## Table of Contents
-
 - [General](#general)  
 - [OOP](#oop)  
 - [SOLID](#solid)  
@@ -198,7 +185,7 @@ https://github.com/p0dyakov/flutter_interview/assets/80569772/68dccc7f-b4f2-4eca
 - `const constructor`: all fields `final`; creates *compile-time constant* (shared instance).  
 - `factory constructor`: returns *existing or new* instance (e.g. singleton, pool, subtype). Cannot use `this`.
 
-```dart
+```
 // const: same instance
 const p1 = Point(1, 2);
 const p2 = Point(1, 2); // identical(p1, p2) → true
@@ -209,7 +196,7 @@ class Logger {
   factory Logger() => _inst;
   Logger._();
 }#
-
+```
 
 JIT and AOT
 JIT (Debug)
@@ -246,15 +233,12 @@ Prefer Object.hash(...) over manual impl.
 Extension Methods
 Add functionality to existing types without inheritance:
 
-dart
-1234
 ↑ Вверх
 
 Mixin
 Reusable behavior via with. No constructors. on restricts usage.
 
-dart
-12345
+
 ↑ Вверх
 
 Sound Null Safety
@@ -272,8 +256,6 @@ Never: bottom type — no instance possible (e.g. throw).
 late
 Defers initialization of non-nullable field:
 
-dart
-1
 ⚠️ Risk: LateInitializationError if read before assignment.
 
 ↑ Вверх
