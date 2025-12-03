@@ -1218,6 +1218,18 @@ Pure architecture is an architecture that follows `SOLID` and is divided into th
 - Strategy. A behavioral design pattern that defines a family of similar algorithms and places each of them in its own class, after which the algorithms can be interchanged right during program execution.
 - Template Method (Template Method). A behavioral design pattern that defines the skeleton of an algorithm, shifting responsibility for some of its steps to subclasses. The pattern allows subclasses to redefine the steps of the algorithm without changing its overall structure.
 - Visitor. A behavioral design pattern that allows you to add new operations to the program without changing the classes of objects on which these operations can be performed.
+ # Flutter Builders Cheat Sheet
+
+| Builder Type       | Purpose / Use Case                                           | Data Source / Trigger                  | Notes |
+|-------------------|--------------------------------------------------------------|---------------------------------------|-------|
+| **FutureBuilder**  | Build UI based on a single asynchronous future              | `Future`                               | Rebuilds once when future completes. Good for one-time async tasks like network requests. |
+| **StreamBuilder**  | Build UI in response to a stream of asynchronous events     | `Stream`                               | Rebuilds every time the stream emits a new value. Ideal for real-time updates like WebSockets, Firebase streams. |
+| **LayoutBuilder**  | Build widgets based on parent constraints / size            | `BoxConstraints`                       | Useful for responsive layouts. |
+| **AnimatedBuilder**| Build widgets in response to animations                     | `Animation`                            | Efficient way to rebuild only part of the widget tree during animation. |
+| **ValueListenableBuilder** | Build UI when a `ValueNotifier` changes               | `ValueNotifier`                        | Lightweight alternative to `setState` for small reactive updates. |
+| **ListView.builder** | Efficiently build scrollable lists                         | Indexed data or item count             | Builds widgets on demand for large or infinite lists. |
+| **StreamProvider / FutureProvider** (from Riverpod / Provider) | Build UI based on async data with state management | Stream / Future                         | Integrates reactive state management patterns. |
+[↑ Вверх](#table-of-contents)
 
  DRY (Don't Repeat Yourself)
 Смысл:
@@ -1279,3 +1291,4 @@ class User {
 Применение:
 * Не добавляем методы и свойства до реальной необходимости
 * Принцип Lean-разработки
+[↑ Вверх](#table-of-contents)
