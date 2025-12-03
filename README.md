@@ -410,6 +410,15 @@ Future states:
 - Completed with Error - the operation was completed with an error
 
 ---
+↑ Вверх
+
+Stream
+
+A stream is a sequence of asynchronous events. Stream tells you that there is an event and when it will be ready
+
+Single subscription is a type of stream where there can be only one subscriber.
+Broadcast is a type of stream where there can be many subscribers. At the same time, Broadcast streams give their data regardless of whether someone is subscribed to them or not. Stream subscribers receive events only from the moment of subscription, and not from the moment of the start of the stream`s life
+
 [↑ Вверх](#table-of-contents)
 
 <!-- TOC --><a name="future-constructors"></a>
